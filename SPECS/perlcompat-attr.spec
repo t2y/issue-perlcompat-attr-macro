@@ -25,3 +25,7 @@ chmod 755 %{buildroot}%{_bindir}/hello
 
 %files
 %{_bindir}/hello
+
+%changelog
+* Tue Feb 17 2026 Tetsuya Morimoto <tetsuya.morimoto@gmail.com> - 1.0-1
+- initial packaging
