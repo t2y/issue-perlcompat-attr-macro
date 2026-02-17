@@ -13,12 +13,25 @@ relation to Perl.
 
 ## Reproduction steps
 
+### almalinux 10.1
+
+```
+$ docker run --rm -it almalinux:10.1-20260129 /bin/bash
+```
+
+```bash
+# Preliminary work
+dnf install -y rpm-build make git perl-generators perl-srpm-macros
+git clone https://github.com/t2y/issue-perlcompat-attr-macro.git
+cd issue-perlcompat-attr-macro/
+```
+
 ```bash
 # 1. Build the reproducer package
 make
 
 # 2. Check for perl-related dependencies
-rpm -qpR RPMS/x86_64/perlcompat-attr-1.0-1.el9.x86_64.rpm | grep perl
+rpm -qpR RPMS/x86_64/perlcompat-attr-1.0-1.el10.x86_64.rpm | grep perl
 
 # Expected: (no output)
 # Actual:   perl-libs
