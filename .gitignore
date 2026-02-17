@@ -1,0 +1,5 @@
+# RPM build artifacts
+BUILD/
+RPMS/
+SOURCES/
+SRPMS/
